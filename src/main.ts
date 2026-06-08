@@ -1,3 +1,7 @@
-import ReactEmbed from './ReactEmbed';
-export * from './ReactEmbed';
-export default ReactEmbed;
+export {
+  default as ReactEmbed,
+  ReactEmbedConfigContext,
+  type AttributesMap,
+  type ReactEmbedConfigContextType,
+  type TransformAttributesMap,
+} from './ReactEmbed';

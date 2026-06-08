@@ -23,14 +23,14 @@ export default function EventManager({
 }: EventManagerProps) {
   const [props, setProps] = useState(rest);
   useEffect(() => {
-    eventHandler.addEventListener('props', (event: Event) => {
+    const onProps = (event: Event) => {
       if (isPropsEvent(event)) {
-        setProps((prev) => {
-          return { ...prev, ...event.detail.props };
-        });
+        setProps((prev) => ({ ...prev, ...event.detail.props }));
       }
-    });
-  }, [eventHandler, props]);
+    };
+    eventHandler.addEventListener('props', onProps);
+    return () => eventHandler.removeEventListener('props', onProps);
+  }, [eventHandler]);
 
   return React.createElement(component, props);
 }

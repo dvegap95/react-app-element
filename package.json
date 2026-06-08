@@ -1,14 +1,20 @@
 {
-  "name": "@dvegap95/react-embed",
+  "name": "react-app-element",
   "version": "0.1.0",
-  "description": "Web component base class for embedding React apps in any host page",
+  "description": "Custom element base class for embedding full React applications in any host page",
   "type": "module",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dvegap95/react-embed.git"
+    "url": "https://github.com/dvegap95/react-app-element.git"
   },
-  "keywords": ["react", "web-components", "custom-elements", "embed"],
+  "keywords": [
+    "react",
+    "web-components",
+    "custom-elements",
+    "micro-frontend",
+    "embed"
+  ],
   "main": "./dist/main.js",
   "module": "./dist/main.js",
   "types": "./dist/main.d.ts",
