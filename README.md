@@ -8,8 +8,19 @@ Use it when you ship a self-contained React bundle and need a stable, framework-
 
 ## Install
 
+> Note: `react-app-element` is **not published to the npm registry yet**.
+> The instructions below install/use it from this repository (after building `dist/`).
+
 ```bash
-npm install react-app-element
+# 1) Build this repo (generates dist/)
+npm install
+npm run build
+
+# 2) In your consuming project, install this repo as a local dependency
+#    (the local install will pick up the generated dist/ folder)
+npm install file:../path/to/react-app-element
+
+# Your host app must also provide peer dependencies:
 npm install react react-dom   # peer dependencies — same major as your app
 ```
 

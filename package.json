@@ -11,10 +11,17 @@
   "keywords": [
     "react",
     "web-components",
+    "web-component",
     "custom-elements",
+    "custom-element",
     "micro-frontend",
+    "microfrontends",
     "embed"
   ],
+  "homepage": "https://github.com/dvegap95/react-app-element#readme",
+  "bugs": {
+    "url": "https://github.com/dvegap95/react-app-element/issues"
+  },
   "main": "./dist/main.js",
   "module": "./dist/main.js",
   "types": "./dist/main.d.ts",
