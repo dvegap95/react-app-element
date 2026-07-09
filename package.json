@@ -2,21 +2,29 @@
   "name": "react-app-element",
   "version": "0.1.0",
   "description": "Custom element base class for embedding full React applications in any host page",
+  "author": "dvegap95",
   "type": "module",
   "license": "MIT",
+  "sideEffects": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/dvegap95/react-app-element.git"
+    "url": "git+https://github.com/dvegap95/react-app-element.git"
   },
   "keywords": [
     "react",
+    "react-embed",
     "web-components",
     "web-component",
+    "webcomponent",
     "custom-elements",
     "custom-element",
+    "react-to-web-component",
     "micro-frontend",
+    "microfrontend",
     "microfrontends",
-    "embed"
+    "embed",
+    "shadow-dom",
+    "framework-agnostic"
   ],
   "homepage": "https://github.com/dvegap95/react-app-element#readme",
   "bugs": {
@@ -34,9 +42,11 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsc && vite build",
+    "prepublishOnly": "npm run build",
     "test": "vitest run",
     "test:watch": "vitest",
-    "lint": "eslint src --ext ts,tsx"
+    "lint": "eslint src --ext ts,tsx",
+    "prepack": "npm run build"
   },
   "peerDependencies": {
     "react": "^18.3.1",

@@ -8,20 +8,19 @@ Use it when you ship a self-contained React bundle and need a stable, framework-
 
 ## Install
 
-> Note: `react-app-element` is **not published to the npm registry yet**.
-> The instructions below install/use it from this repository (after building `dist/`).
+```bash
+npm install react-app-element
+npm install react react-dom   # peer dependencies — same major as your app
+```
+
+**From source** (before a release hits npm, or for local development):
 
 ```bash
-# 1) Build this repo (generates dist/)
-npm install
-npm run build
-
-# 2) In your consuming project, install this repo as a local dependency
-#    (the local install will pick up the generated dist/ folder)
+git clone https://github.com/dvegap95/react-app-element.git
+cd react-app-element
+npm install && npm run build
+# in your consuming project:
 npm install file:../path/to/react-app-element
-
-# Your host app must also provide peer dependencies:
-npm install react react-dom   # peer dependencies — same major as your app
 ```
 
 ## Host page: load React first
@@ -146,11 +145,11 @@ Not planned for the initial publish — documented so direction stays clear:
 - [ ] **Optional default props** — static `defaultProps` merged before attribute/property layers.
 - [ ] **Disconnect / reconnect** — explicit `disconnectedCallback` root teardown and re-mount policy.
 
-Contributions welcome once the repo stabilizes after npm publish.
+Contributions welcome — open an issue or PR on GitHub.
 
 ## Related
 
-- [lerna-vite-monorepo-template](https://github.com/dvegap95/lerna-vite-monorepo-template) — monorepo that vendors this package for zero-config bootstrapping; swap to `react-app-element` from npm when ready.
+- [lerna-vite-monorepo-template](https://github.com/dvegap95/lerna-vite-monorepo-template) — monorepo template for bootstrapping apps that embed via custom elements.
 
 ## License
 
