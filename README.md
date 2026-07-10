@@ -117,6 +117,32 @@ npm test
 npm run build   # emits dist/main.js (~few KB, React external)
 ```
 
+## Publishing (npm Trusted Publishing)
+
+Releases use **OIDC trusted publishing** from GitHub Actions — no long-lived `NPM_TOKEN` in secrets.
+
+### One-time npm setup
+
+1. Publish `0.1.0` once interactively if the package does not exist yet (`npm login` → `npm publish`).
+2. On [npmjs.com](https://www.npmjs.com/package/react-app-element) → **Settings → Trusted publishing** → **GitHub Actions**:
+   - **Organization or user:** `dvegap95`
+   - **Repository:** `react-app-element`
+   - **Workflow filename:** `ci.yml` (filename only)
+   - **Allowed actions:** `npm publish`
+3. Optional hardening: **Settings → Publishing access** → require 2FA and disallow tokens.
+
+### Release from GitHub
+
+**Tag (recommended):**
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+**Manual dispatch:** Actions → **CI** → **Run workflow** → check **Publish to npm** → Run.
+
+The `publish` job runs only after `test` passes. Provenance is generated automatically via OIDC.
+
 ## How this differs from r2wc
 
 | | **react-app-element** | **@r2wc/react-to-web-component** |
